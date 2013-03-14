@@ -23,7 +23,7 @@ Create a service user:
 Clone this repository:
 
     $ cd /var/lib
-    $ sudo clone https://github.com/webmagic-dev/irc.hect
+    $ sudo clone https://github.com/webmagic-dev/irc.hect.git
     $ sudo chown -R hecor:hector irc.hect
 
 Install dependency libraries:
