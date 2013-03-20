@@ -24,7 +24,7 @@ Clone this repository:
 
     $ cd /var/lib
     $ sudo clone https://github.com/webmagic-dev/irc.hect.git
-    $ sudo chown -R hecor:hector irc.hect
+    $ sudo chown -R hector:hector irc.hect
 
 Install dependency libraries:
 
@@ -33,7 +33,7 @@ Install dependency libraries:
 
 Edit upstart configuration file, and copy to `/etc/init`:
 
-    $ vi conf/hecor.conf # Edit your environment variables
+    $ vi conf/hector.conf # Edit your environment variables
     $ sudo cp conf/upstart/hector.conf /etc/init/
 
 Copy the logrotate configuration file:
