@@ -5,6 +5,12 @@ This is a configuration script for [Hector](https://github.com/sstephenson/hecto
 Hector is a private IRC server.
 
 
+Features
+-------------------------------------------------------------------------------
+
+- LDAP Authentication
+
+
 Requirements
 -------------------------------------------------------------------------------
 
@@ -48,4 +54,6 @@ Start the IRC daemon
 LICENSE
 --------------------------------------------------------------------------------
 
-Copyright &copy; 2013 OCC Corporation.
+&copy; 2013 OCC Corporation.
+This project is licensed under the MIT license.
+See LICENSE for details.
