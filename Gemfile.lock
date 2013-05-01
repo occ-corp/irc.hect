@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     eventmachine (1.0.3)
-    hector (1.0.8)
+    hector (1.0.9)
       eventmachine (>= 0.12.10)
     ruby-ldap (0.9.12)
 
