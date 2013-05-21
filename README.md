@@ -46,7 +46,7 @@ Copy the logrotate configuration file:
 
     $ sudo cp conf/logrotate.d/hector /etc/logrotate.d
 
-Start the IRC daemon
+Start the IRC daemon:
 
     $ sudo service hector start
 
