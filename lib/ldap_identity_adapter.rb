@@ -29,11 +29,12 @@ module Hector
         conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
 
         conn.bind(dn, password)
-        conn.unbind
         return true
       rescue LDAP::ResultError => e
         puts "Ldap authentication error. #{e.to_s}. account => #{username}"
         return false
+      ensure
+        conn.unbind
       end
   end
 end
