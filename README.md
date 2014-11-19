@@ -29,7 +29,7 @@ Create a service user:
 Clone this repository:
 
     $ cd /var/lib
-    $ sudo clone https://github.com/webmagic-dev/irc.hect.git
+    $ sudo clone https://github.com/occ-corp/irc.hect.git
     $ sudo chown -R hector:hector irc.hect
 
 Install dependency libraries:
@@ -39,7 +39,7 @@ Install dependency libraries:
 
 Edit upstart configuration file, and copy to `/etc/init`:
 
-    $ vi conf/hector.conf # Edit your environment variables
+    $ vi conf/upstart/hector.conf # Edit your environment variables
     $ sudo cp conf/upstart/hector.conf /etc/init/
 
 Copy the logrotate configuration file:
@@ -54,6 +54,6 @@ Start the IRC daemon:
 LICENSE
 --------------------------------------------------------------------------------
 
-&copy; 2013 OCC Corporation.
+&copy; 2014 OCC Corporation.
 This project is licensed under the MIT license.
 See LICENSE for details.
