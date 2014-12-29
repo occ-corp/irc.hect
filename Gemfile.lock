@@ -4,11 +4,11 @@ GEM
     eventmachine (1.0.3)
     hector (1.0.9)
       eventmachine (>= 0.12.10)
-    ruby-ldap (0.9.12)
+    net-ldap (0.10.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   hector
-  ruby-ldap
+  net-ldap
