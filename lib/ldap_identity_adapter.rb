@@ -29,7 +29,7 @@ module Hector
         :auth => {
           :method   => :simple,
           :username => "uid=#{username},ou=Users,#{ldap_domain}",
-        :password => password
+          :password => password
         }
       )
 
