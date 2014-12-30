@@ -1,4 +1,4 @@
-require 'ldap'
+require 'net-ldap'
 
 module Hector
   class LdapIdentityAdapter
@@ -19,22 +19,28 @@ module Hector
     end
 
     private
-      def ldap_login(username, password)
-        ldap_server = ENV['LDAP_SERVER']
-        ldap_domain = ENV['LDAP_DOMAIN']
 
-        dn="uid=#{username},ou=Users,#{ldap_domain}"
+    def ldap_login(username = nil, password = nil)
+      ldap_server = ENV['LDAP_SERVER']
+      ldap_domain = ENV['LDAP_DOMAIN']
 
-        conn = LDAP::Conn.new(ldap_server, LDAP::LDAP_PORT)
-        conn.set_option(LDAP::LDAP_OPT_PROTOCOL_VERSION, 3)
+      conn = Net::LDAP.new(
+        :host => ldap_server,
+        :auth => {
+          :method   => :simple,
+          :username => "uid=#{username},ou=Users,#{ldap_domain}",
+          :password => password
+        }
+      )
 
-        conn.bind(dn, password)
-        return true
-      rescue LDAP::ResultError => e
-        puts "Ldap authentication error. #{e.to_s}. account => #{username}"
-        return false
-      ensure
-        conn.unbind
+      unless conn.bind
+        raise Net::LDAP::LdapError.new
       end
+
+      return true
+    rescue Net::LDAP::LdapError => e
+      puts "LDAP authentication error. #{e.to_s}. account => #{username}"
+      return false
+    end
   end
 end
